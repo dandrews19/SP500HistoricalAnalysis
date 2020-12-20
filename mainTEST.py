@@ -73,7 +73,7 @@ def dataFrom2007to2009():
 # # every day for the stock market, and from that I record the closing price for each minute, which is located in the
 # # 5th cplumn of the file.
 def dataFrom2010to2019():
-    fileIn = open("SPX_2010_2019 copy 2.csv", "r")
+    fileIn = open("SPX_2010_2019.csv", "r")
     listOfStocks2 = []
     print("Parsing through data from 2010 to 2019...")
 
