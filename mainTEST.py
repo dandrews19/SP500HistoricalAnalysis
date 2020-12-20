@@ -28,7 +28,7 @@ from StockClass import ThreeDayIntervalObject
 # # 5th cplumn of the file.
 # Modules used: datetime to help go through the function in terms of the time it gives
 def dataFrom2007to2009():
-    fileIn = open("SPX_2000_2009 OFFICIAL - SPX_2000_2009 copy 2.csv", "r")
+    fileIn = open("SPX_2000_2009.csv", "r")
     listOfStocks1 = []
     print("Parsing through data from 2007 to 2009...")
 
