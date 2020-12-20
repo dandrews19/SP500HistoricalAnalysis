@@ -671,66 +671,9 @@ class GUI:
             chart1.get_tk_widget().grid(row=2, rowspan=7, column=19)
             self.counter6 += 1
 
-    def GraphAfterFirstSimilarDay(self):
-        if self.counter7 == 0:
-            self.ax1.plot(self.graphObjectsDayAfter[0].getxCoords1(), self.graphObjectsDayAfter[0].getyCoords1(), linewidth=0.75)
-            self.legendList1.append(self.graphObjectsDayAfter[0].getlabel1())
-            self.ax1.legend(self.legendList1, bbox_to_anchor=(1.05, 1))
-            chart1 = FigureCanvasTkAgg(self.fig1, self.master)
-            chart1.get_tk_widget().grid(row=10, rowspan=7, column=19)
-            self.counter7 += 1
-
-    def GraphAfterSecondSimilarDay(self):
-        if self.counter8 == 0:
-            self.ax1.plot(self.graphObjectsDayAfter[1].getxCoords1(), self.graphObjectsDayAfter[1].getyCoords1(), linewidth=0.75)
-            self.legendList1.append(self.graphObjectsDayAfter[1].getlabel1())
-            self.ax1.legend(self.legendList1, bbox_to_anchor=(1.05, 1))
-            chart1 = FigureCanvasTkAgg(self.fig1, self.master)
-            chart1.get_tk_widget().grid(row=10, rowspan=7, column=19)
-            self.counter8 += 1
-
-
-    def GraphAfterThirdSimilarDay(self):
-        if self.counter9 == 0:
-            self.ax1.plot(self.graphObjectsDayAfter[2].getxCoords1(), self.graphObjectsDayAfter[2].getyCoords1(), linewidth=0.75)
-            self.legendList1.append(self.graphObjectsDayAfter[2].getlabel1())
-            self.ax1.legend(self.legendList1, bbox_to_anchor=(1.05, 1))
-            chart1 = FigureCanvasTkAgg(self.fig1, self.master)
-            chart1.get_tk_widget().grid(row=10, rowspan=7, column=19)
-            self.counter9 += 1
-
-    def GraphAfterFourthSimilarDay(self):
-        if self.counter10 == 0:
-            self.ax1.plot(self.graphObjectsDayAfter[3].getxCoords1(), self.graphObjectsDayAfter[3].getyCoords1(), linewidth=0.75)
-            self.legendList1.append(self.graphObjectsDayAfter[3].getlabel1())
-            self.ax1.legend(self.legendList1, bbox_to_anchor=(1.05, 1))
-            chart1 = FigureCanvasTkAgg(self.fig1, self.master)
-            chart1.get_tk_widget().grid(row=10, rowspan=7, column=19)
-            self.counter10 += 1
-
-    def GraphAfterFifthSimilarDay(self):
-        if self.counter11 == 0:
-            self.ax1.plot(self.graphObjectsDayAfter[4].getxCoords1(), self.graphObjectsDayAfter[4].getyCoords1(), linewidth=0.75)
-            self.legendList1.append(self.graphObjectsDayAfter[4].getlabel1())
-            self.ax1.legend(self.legendList1, bbox_to_anchor=(1.05, 1))
-            chart1 = FigureCanvasTkAgg(self.fig1, self.master)
-            chart1.get_tk_widget().grid(row=10, rowspan=7, column=19)
-            self.counter11 += 1
-
-
-    def GraphNextDayAverage(self):
-        if self.counter12 == 0:
-            self.ax1.plot(self.afterHistoricalAverageXData, self.afterHistoricalAverageYData, linewidth=0.75)
-            self.legendList1.append("Historical Average For Next Day")
-            self.ax1.legend(self.legendList1, bbox_to_anchor=(1.05, 1))
-            chart1 = FigureCanvasTkAgg(self.fig1, self.master)
-            chart1.get_tk_widget().grid(row=10, rowspan=7, column=19)
-            self.counter12 += 1
-
-
     def ThreeDayGraphCurrentDay(self):
         if self.counter13 == 0:
-            self.ax3.plot(np.linspace(0, 1173, 1173), self.ThreeDayCurrentDayYData, linewidth=0.75)
+            self.ax3.plot(np.linspace(0, len(self.ThreeDayCurrentDayYData), len(self.ThreeDayCurrentDayYData)), self.ThreeDayCurrentDayYData, linewidth=0.75)
             self.ThreeDaylegendList.append(self.threeDayIntervalsList[-1].getDayRange())
             self.ax3.legend(self.ThreeDaylegendList, bbox_to_anchor=(1.05, 1))
             chart3 = FigureCanvasTkAgg(self.fig3, self.master2)
@@ -739,7 +682,7 @@ class GUI:
 
     def ThreeDayGraphFirstSimilarDay(self):
         if self.counter14 == 0:
-            self.ax3.plot(np.linspace(0, 1173, 1173), self.threeDayAreaList[0].getTotalYCoords(), linewidth=0.75)
+            self.ax3.plot(np.linspace(0, len(self.threeDayAreaList[0].getTotalYCoords()), len(self.threeDayAreaList[0].getTotalYCoords())), self.threeDayAreaList[0].getTotalYCoords(), linewidth=0.75)
             self.ThreeDaylegendList.append(self.threeDayAreaList[0].getDayRange())
             self.ax3.legend(self.ThreeDaylegendList, bbox_to_anchor=(1.05, 1))
             chart3 = FigureCanvasTkAgg(self.fig3, self.master2)
@@ -748,7 +691,7 @@ class GUI:
 
     def ThreeDayGraphSecondSimilarDay(self):
         if self.counter15 == 0:
-            self.ax3.plot(np.linspace(0, 1173, 1173), self.threeDayAreaList[1].getTotalYCoords(), linewidth=0.75)
+            self.ax3.plot(np.linspace(0, len(self.threeDayAreaList[1].getTotalYCoords()), len(self.threeDayAreaList[1].getTotalYCoords())), self.threeDayAreaList[1].getTotalYCoords(), linewidth=0.75)
             self.ThreeDaylegendList.append(self.threeDayAreaList[1].getDayRange())
             self.ax3.legend(self.ThreeDaylegendList, bbox_to_anchor=(1.05, 1))
             chart3 = FigureCanvasTkAgg(self.fig3, self.master2)
@@ -758,7 +701,7 @@ class GUI:
 
     def ThreeDayGraphThirdSimilarDay(self):
         if self.counter16 == 0:
-            self.ax3.plot(np.linspace(0, 1173, 1173), self.threeDayAreaList[2].getTotalYCoords(), linewidth=0.75)
+            self.ax3.plot(np.linspace(0, len(self.threeDayAreaList[2].getTotalYCoords()), len(self.threeDayAreaList[2].getTotalYCoords())), self.threeDayAreaList[2].getTotalYCoords(), linewidth=0.75)
             self.ThreeDaylegendList.append(self.threeDayAreaList[2].getDayRange())
             self.ax3.legend(self.ThreeDaylegendList, bbox_to_anchor=(1.05, 1))
             chart3 = FigureCanvasTkAgg(self.fig3, self.master2)
@@ -768,7 +711,7 @@ class GUI:
 
     def ThreeDayGraphFourthSimilarDay(self):
         if self.counter17 == 0:
-            self.ax3.plot(np.linspace(0, 1173, 1173), self.threeDayAreaList[3].getTotalYCoords(), linewidth=0.75)
+            self.ax3.plot(np.linspace(0, len(self.threeDayAreaList[3].getTotalYCoords()), len(self.threeDayAreaList[3].getTotalYCoords())), self.threeDayAreaList[3].getTotalYCoords(), linewidth=0.75)
             self.ThreeDaylegendList.append(self.threeDayAreaList[3].getDayRange())
             self.ax3.legend(self.ThreeDaylegendList, bbox_to_anchor=(1.05, 1))
             chart3 = FigureCanvasTkAgg(self.fig3, self.master2)
@@ -778,7 +721,7 @@ class GUI:
 
     def ThreeDayGraphFifthSimilarDay(self):
         if self.counter18 == 0:
-            self.ax3.plot(np.linspace(0, 1173, 1173), self.threeDayAreaList[4].getTotalYCoords(), linewidth=0.75)
+            self.ax3.plot(np.linspace(0, len(self.threeDayAreaList[4].getTotalYCoords()), len(self.threeDayAreaList[4].getTotalYCoords())), self.threeDayAreaList[4].getTotalYCoords(), linewidth=0.75)
             self.ThreeDaylegendList.append(self.threeDayAreaList[4].getDayRange())
             self.ax3.legend(self.ThreeDaylegendList, bbox_to_anchor=(1.05, 1))
             chart3 = FigureCanvasTkAgg(self.fig3, self.master2)
@@ -788,7 +731,7 @@ class GUI:
 
     def ThreeDayGraphAfterFirstSimilarDay(self):
         if self.counter19 == 0:
-            self.ax4.plot(np.linspace(0, 1173, 1173), self.ThreeDaygraphObjectsDayAfter[0].getTotalYCoords(), linewidth=0.75)
+            self.ax4.plot(np.linspace(0, len(self.ThreeDaygraphObjectsDayAfter[0].getTotalYCoords()), len(self.ThreeDaygraphObjectsDayAfter[0].getTotalYCoords())), self.ThreeDaygraphObjectsDayAfter[0].getTotalYCoords(), linewidth=0.75)
 
             self.ThreeDaylegendList1.append(self.ThreeDaygraphObjectsDayAfter[0].getDayRange())
             self.ax4.legend(self.ThreeDaylegendList1, bbox_to_anchor=(1.05, 1))
@@ -798,7 +741,7 @@ class GUI:
 
     def ThreeDayGraphAfterSecondSimilarDay(self):
         if self.counter20 == 0:
-            self.ax4.plot(np.linspace(0, 1173, 1173), self.ThreeDaygraphObjectsDayAfter[1].getTotalYCoords(), linewidth=0.75)
+            self.ax4.plot(np.linspace(0, len(self.ThreeDaygraphObjectsDayAfter[1].getTotalYCoords()), len(self.ThreeDaygraphObjectsDayAfter[1].getTotalYCoords())), self.ThreeDaygraphObjectsDayAfter[1].getTotalYCoords(), linewidth=0.75)
             self.ThreeDaylegendList1.append(self.ThreeDaygraphObjectsDayAfter[1].getDayRange())
             self.ax4.legend(self.ThreeDaylegendList1, bbox_to_anchor=(1.05, 1))
             chart4 = FigureCanvasTkAgg(self.fig4, self.master2)
@@ -808,7 +751,7 @@ class GUI:
 
     def ThreeDayGraphAfterThirdSimilarDay(self):
         if self.counter21 == 0:
-            self.ax4.plot(np.linspace(0, 1173, 1173), self.ThreeDaygraphObjectsDayAfter[2].getTotalYCoords(), linewidth=0.75)
+            self.ax4.plot(np.linspace(0, len(self.ThreeDaygraphObjectsDayAfter[2].getTotalYCoords()), len(self.ThreeDaygraphObjectsDayAfter[2].getTotalYCoords())), self.ThreeDaygraphObjectsDayAfter[2].getTotalYCoords(), linewidth=0.75)
             self.ThreeDaylegendList1.append(self.ThreeDaygraphObjectsDayAfter[2].getDayRange())
             self.ax4.legend(self.ThreeDaylegendList1, bbox_to_anchor=(1.05, 1))
             chart4 = FigureCanvasTkAgg(self.fig4, self.master2)
@@ -818,7 +761,7 @@ class GUI:
 
     def ThreeDayGraphAfterFourthSimilarDay(self):
         if self.counter22 == 0:
-            self.ax4.plot(np.linspace(0, 1173, 1173), self.ThreeDaygraphObjectsDayAfter[3].getTotalYCoords(), linewidth=0.75)
+            self.ax4.plot(np.linspace(0, len(self.ThreeDaygraphObjectsDayAfter[3].getTotalYCoords()), len(self.ThreeDaygraphObjectsDayAfter[3].getTotalYCoords())), self.ThreeDaygraphObjectsDayAfter[3].getTotalYCoords(), linewidth=0.75)
             self.ThreeDaylegendList1.append(self.ThreeDaygraphObjectsDayAfter[3].getDayRange())
             self.ax4.legend(self.ThreeDaylegendList1, bbox_to_anchor=(1.05, 1))
             chart4 = FigureCanvasTkAgg(self.fig4, self.master2)
@@ -827,7 +770,7 @@ class GUI:
 
     def ThreeDayGraphAfterFifthSimilarDay(self):
         if self.counter23 == 0:
-            self.ax4.plot(np.linspace(0, 1173, 1173), self.ThreeDaygraphObjectsDayAfter[4].getTotalYCoords(), linewidth=0.75)
+            self.ax4.plot(np.linspace(0, len(self.ThreeDaygraphObjectsDayAfter[4].getTotalYCoords()), len(self.ThreeDaygraphObjectsDayAfter[4].getTotalYCoords())), self.ThreeDaygraphObjectsDayAfter[4].getTotalYCoords(), linewidth=0.75)
 
             self.ThreeDaylegendList1.append(self.ThreeDaygraphObjectsDayAfter[4].getDayRange())
             self.ax4.legend(self.ThreeDaylegendList1, bbox_to_anchor=(1.05, 1))
@@ -838,7 +781,7 @@ class GUI:
 
     def ThreeDayGraphNextDayAverage(self):
         if self.counter24 == 0:
-            self.ax4.plot(np.linspace(0, 1173, 1173), self.ThreeDayafterHistoricalAverageYData, linewidth=0.75)
+            self.ax4.plot(np.linspace(0, len(self.ThreeDayafterHistoricalAverageYData), len(self.ThreeDayafterHistoricalAverageYData)), self.ThreeDayafterHistoricalAverageYData, linewidth=0.75)
             self.ThreeDaylegendList1.append("Historical next 3-Day Interval Average")
             self.ax4.legend(self.ThreeDaylegendList1, bbox_to_anchor=(1.05, 1))
             chart4 = FigureCanvasTkAgg(self.fig4, self.master2)
