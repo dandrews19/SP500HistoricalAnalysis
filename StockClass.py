@@ -4,6 +4,9 @@ from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg, NavigationTool
 import numpy as np
 from tkinter import ttk
 
+
+# Stock Object, creates an object for each day of the S&P 500 for the past 13 years, and records the prices for each minute, which are then assigned
+# to a time interval based on the time of day the data came from. Also records date and closing price.
 class Stock(object):
 
 
@@ -16,6 +19,7 @@ class Stock(object):
         self.timeInterval4Prices = []
         self.ClosingPrice = 0
 
+        # Get and set methods for the attributes of the stock class.
     def updateClosingPrice(self, closingPrice):
         self.ClosingPrice = closingPrice
 
@@ -56,6 +60,9 @@ class Stock(object):
     def getClosingPrice(self):
         return self.ClosingPrice
 
+    
+    # Similar to the Stock Class, this class records the data in relation to the percentage difference from the previous close. Additionally,
+    # this object will contain information related to the similarity between the most recent data and every day in the S&P 500.
 class StockDifference(object):
 
 
@@ -81,8 +88,8 @@ class StockDifference(object):
                                          + self.areaBetweenInterval2Functions + self.areaBetweenInterval3Functions
                                           + self.areaBetweenInterval4Functions)
 
-
-
+    
+    # get and set methods for the attributes of the Stock Difference class
     def updateClosingPrice(self, closingPrice):
         self.ClosingPrice = closingPrice
 
@@ -187,6 +194,8 @@ class StockDifference(object):
                    self.areaBetweenInterval3Functions, self.areaBetweenInterval4Functions])
 
 
+    # This class stores all the information for three-day interval graphing purposes, including the date range, similarity between the most
+    # recent three day interval, and all the prices for that range
 class ThreeDayIntervalObject(object):
 
     def __init__(self):
@@ -203,6 +212,7 @@ class ThreeDayIntervalObject(object):
         self.Day2Area = 0
         self.Day3Area = 0
 
+        # get and set methods for the three day interval object
     def updateBeginningDay(self, BeginningDay):
         self.BeginningDay = BeginningDay
 
@@ -273,7 +283,7 @@ class ThreeDayIntervalObject(object):
 
 
 
-
+# this class contains all the information needed to graph the single day infromation, including the title, line labels, and coordinates
 class GraphObject(object):
 
     def __init__(self):
@@ -328,6 +338,9 @@ class GraphObject(object):
         return self.label2
 
 
+    # this class creates a GUI where the user can see the data for the five most similar performance when compared to the most recent one, and how the similar
+    # prior performances did the day afterwards. This can be done for a one or three day interval, and any graph the user wants can be displayed, and the 
+    # graphs can be reset at any point.
 class GUI:
 
 
