@@ -37,13 +37,18 @@
 ![Image of Full Tool](https://github.com/dandrews19/SP500HistoricalAnalysis/blob/master/Full-Tool.png)
 #### The user also has all of the same options for the three day interval, and when displaying the graphs, it displays graphs of three days rather than one, as shown below.
 ![Image Three Day Full](https://github.com/dandrews19/SP500HistoricalAnalysis/blob/master/Three-Day-Full.png)
-#### Here is a gif running through all the options:
+#### Here is a gif running through all the options on the three-day interval:
 ![Gif of Demo](https://github.com/dandrews19/SP500HistoricalAnalysis/blob/master/StockDemo.gif)
 
 # Modules Used
 
+- Numpy, for fitting data into a polynomial and storing data in arrays
+- Datetime, for having the ability to parse through data based on time
+- SciPy, to integrate polynomials
+- Statistics, to calculate the average value between lists
+- Matplotlib, to graph all the data and display it
+- Tkinter, to create a user-friendly interface with buttons that enable the plots to be shown
 
-# Code Example
 
-
-# How to use?
+# How to use
+#### To use this program, all you have to do is press run in mainTEST.py; make sure you have all the modules installed, StockClass.py is in your directory, and put the the provided CSV files in your directory. Additionally, the csv probably won't be updated, so you might have to somehow get data for the most current dates, or buy data from FirstRateData.com
