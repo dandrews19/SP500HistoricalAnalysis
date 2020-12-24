@@ -308,7 +308,7 @@ def areaBetweenRecentCurveAndEveryOtherCurve(differenceFromPreviousCloseList):
 # description: this function creates an object for each historical three-day interval, takes the area of each day with
 # reespect to the most recent three-day interval, and creates a list containing data for all three day intervals
 def ThreeDayIntervalAreas(differenceFromPreviousCloseList):
-    print("Three Day Intervals...")
+    print("Compiling a List of Three Day Intervals...")
     i = 2
     listofThreeDayIntervals = []
     while i < len(differenceFromPreviousCloseList):
