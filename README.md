@@ -51,4 +51,4 @@
 
 
 # How to use
-#### To use this program, all you have to do is press run in mainTEST.py; make sure you have all the modules installed, StockClass.py is in your directory, and put the the provided CSV files in your directory. Additionally, the csv probably won't be updated, so you might have to somehow get data for the most current dates, or buy data from FirstRateData.com
+#### To use this program, all you have to do is press run in mainTEST.py (it takes a bit because it has to work through 1.3+ million data points); make sure you have all the modules installed, StockClass.py is in your directory, and put the the provided CSV files in your directory. Additionally, the csv probably won't be updated, so you might have to somehow get data for the most current dates, or buy data from FirstRateData.com
