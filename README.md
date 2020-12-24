@@ -2,12 +2,14 @@
 
 #### This project is meant to be used as a tool to see if there are any recurring trends with the most recent performance/ performances of the S&P 500
 
+###### * The code for this program can be applied to any stock/index/etf etc. if the data is in the correct format. However, the GUI is set up best for the S&P
+
 # Motivation
 #### The motivation behind this project was to see whether or not the phrase "Past performance is no guarantee of future results" holds up. Through this project, the goal is to look at performances of the S&P 500 in the past that are similar to the most recent performance of the S&P 500 (based on percentage difference from the previous close)
 
 
 # How it works
-#### The algorithm goes through a series of processes to parse through all of the data from the S&P 500. It uses intraday, 1- minute data from FirstRateData.com, where it is formatted by the following in a csv:  Date/Time, Open, High, Low, Close
+#### The algorithm goes through a series of processes to parse through all of the data from the S&P 500 (dating back to April 2007). It uses intraday, 1- minute data from FirstRateData.com, where it is formatted by the following in a csv:  Date/Time, Open, High, Low, Close
 #### First, the algorithm goes through all the data, which is contained in three csv files, and breaks up each day of the stock market into the following sections:
 - Date: the date is recorded
 - Time Interval 0 Prices: The first of five total time intervals, this one ranging from (in EST) 9:30 AM - 10:48 AM. This contains of list of all the closing prices by the minute in the interval 0 time period.
@@ -18,6 +20,14 @@
 - Closing Price: Records the last known value of the S&P 500 for each day
 
 #### Then, the algorithm goes through each day again, this time changing all the prices from the value of the S&P 500 at each day and time to the percent difference from the previous of the S&P 500 on that day. For example, if the closing price of the S&P 500 on the previous day was 100, and the first price of the S&P 500 on the current day was 99, the recorded value for that first price on the current day would be -0.01. Like the previous step, these values are broken up into 5 time intervals, which are the same as the ones from before. 
+
+#### Next, the algorithm fits a polynomial of degree 12 to each time interval of each day using NumPy's polyfit function, essentially describing the performance of the S&P 500 on each day by a piecewise function composed of five functions. This was the original motivation behind breaking up each day into five intervals, as the polyfit function works best when it is fitting functions to less than degree 13, and it is more accurate with less data, hence five intervals each described by a 12 degree polynomial is more accurate than just each one day interval described by a 12 degree polynomial.
+
+#### After that, using SciPy's integration function, the area between the most recent day's curves and every other day in the S&P 500's data is recorded, as that is the technique used to describe similarity between curves. Since each day is broken up into five intervals, the area between each curve is taken with their respective interval, and then the five areas are added up to describe the area between each curve.
+
+#### Then, the five day's with the least area between the most recent day's performance are sorted into a list from least to greatest, so the data can be graphed.
+
+###### * A similar process is used for the three day interval calculation as well, no significant differences.
 
 # Screenshots
 
