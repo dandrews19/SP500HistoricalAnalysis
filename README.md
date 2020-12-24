@@ -1,4 +1,4 @@
-# S&P 500 Historical Analysis tool
+# S&P 500 Historical Analysis Tool
 
 #### This project is meant to be used as a tool to see if there are any recurring trends with the most recent performance/ performances of the S&P 500
 
@@ -28,6 +28,8 @@
 #### Then, the five day's with the least area between the most recent day's performance are sorted into a list from least to greatest, so the data can be graphed.
 
 ###### * A similar process is used for the three day interval calculation as well, no significant differences.
+
+#### Finally, the most recent day's data and the 5 most similar previous perfromances, alongside the data for how the similar previous day's performed afterward, are sent to a GUI where they can be displayed in any order the user wants (screenshots are below). 
 
 # Screenshots
 
