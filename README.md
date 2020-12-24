@@ -37,6 +37,8 @@
 ![Image of Full Tool](https://github.com/dandrews19/SP500HistoricalAnalysis/blob/master/Full-Tool.png)
 #### The user also has all of the same options for the three day interval, and when displaying the graphs, it displays graphs of three days rather than one, as shown below.
 ![Image Three Day Full](https://github.com/dandrews19/SP500HistoricalAnalysis/blob/master/Three-Day-Full.png)
+#### Here is a gif running through all the options:
+![Gif of Demo](https://github.com/dandrews19/SP500HistoricalAnalysis/blob/master/StockDemo.gif)
 
 # Modules Used
 
