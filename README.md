@@ -35,6 +35,7 @@
 ![Image of Blank Tool](https://github.com/dandrews19/SP500HistoricalAnalysis/blob/master/Blank-Tool.png)
 #### This is a screenshot of the GUI with no graphs on it. At the top, there are tabs for a single-day and three day intervals. On the left, there are two lists of buttons, labeled Current Day Options and Next Day Options. The buttons under the current day options allow the user to dispay the most recent performance of the S&P 500, and then rest of the buttons are used to display the days that the algorithm found to be similar to the most recent day. Under Next Day options, the user has the option to display how the similsr performances in the past did the day after. This can be used to try and estimate how the market will perform in the future, if there is a pattern. Below is a screenshot of what it looks like when all the plots are displayed. The user can make the graphs blank whenever they wish using the respective Reset Graph buttons. The legend on the right automatically updates when the user selects an option to be displayed, and clears when the graph is reset.
 ![Image of Full Tool](https://github.com/dandrews19/SP500HistoricalAnalysis/blob/master/Full-Tool.png)
+#### The user als has all of the same options for the three day interval, and when displaying the graphs, it displays graphs of three days rather than one, as shown below.
 
 # Modules Used
 
