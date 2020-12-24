@@ -527,8 +527,8 @@ class GUI:
         self.ThreeDayCurrentDayXData =  threeDayIntervalsList[-1].getTotalXCoords()
         self.ThreeDayCurrentDayYData = threeDayIntervalsList[-1].getTotalYCoords()
         self.master2 = self.my_frame2
-        self.ThreeDayafterHistoricalAverageXData = threeDayAfterHistoricalXData #CHANGE
-        self.ThreeDayafterHistoricalAverageYData = threeDayAfterHistoricalYData #CHANGE
+        self.ThreeDayafterHistoricalAverageXData = threeDayAfterHistoricalXData 
+        self.ThreeDayafterHistoricalAverageYData = threeDayAfterHistoricalYData 
 
         self.fig3 = plt.Figure(figsize=(8.2, 3.25), tight_layout=True)
         self.ax3 = self.fig3.add_subplot(111)
@@ -539,7 +539,7 @@ class GUI:
         self.ax3.axhline(y=0, color='k', linestyle='dashed')
         self.ax3.axvline(x=390, linestyle='dashed')
         self.ax3.axvline(x=780, linestyle='dashed', color="darkgray")
-        self.fig3.gca().set_xlabel("Minutes after 9:30 AM EST")
+        self.fig3.gca().set_xlabel("Minutes after 9:30 AM EST from First Day")
         self.fig3.gca().set_ylabel("Percent Difference from Previous Close")
         chart3 = FigureCanvasTkAgg(self.fig3, self.master2)
         chart3.get_tk_widget().grid(row=2, rowspan=7, column=19)
@@ -556,7 +556,7 @@ class GUI:
         self.ax4.axhline(y=0, color='k', linestyle='dashed')
         self.ax4.axvline(x=390, linestyle='dashed')
         self.ax4.axvline(x=780, linestyle='dashed', color="darkgray")
-        self.fig4.gca().set_xlabel("Minutes after 9:30 AM EST")
+        self.fig4.gca().set_xlabel("Minutes after 9:30 AM EST from First Day")
         self.fig4.gca().set_ylabel("Percent Difference from Previous Close")
         chart4 = FigureCanvasTkAgg(self.fig4, self.master2)
         chart4.get_tk_widget().grid(row=10, rowspan=7, column=19)
@@ -815,7 +815,7 @@ class GUI:
         self.ax3.axhline(y=0, color='k', linestyle='dashed')
         self.ax3.axvline(x=390, linestyle='dashed')
         self.ax3.axvline(x=780, linestyle='dashed', color="darkgray")
-        self.fig3.gca().set_xlabel("Minutes after 9:30 AM EST")
+        self.fig3.gca().set_xlabel("Minutes after 9:30 AM EST from First Day")
         self.fig3.gca().set_ylabel("Percent Difference from Previous Close")
         chart3 = FigureCanvasTkAgg(self.fig3, self.master2)
         chart3.get_tk_widget().grid(row=2, rowspan=7, column=19)
@@ -839,7 +839,7 @@ class GUI:
         self.ax4.axhline(y=0, color='k', linestyle='dashed')
         self.ax4.axvline(x=390, linestyle='dashed')
         self.ax4.axvline(x=780, linestyle='dashed', color="darkgray")
-        self.fig4.gca().set_xlabel("Minutes after 9:30 AM EST")
+        self.fig4.gca().set_xlabel("Minutes after 9:30 AM EST from First Day")
         self.fig4.gca().set_ylabel("Percent Difference from Previous Close")
         chart4 = FigureCanvasTkAgg(self.fig4, self.master2)
         chart4.get_tk_widget().grid(row=10, rowspan=7, column=19)
