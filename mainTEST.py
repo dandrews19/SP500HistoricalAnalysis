@@ -73,7 +73,7 @@ def dataFrom2007to2020():
     return listOfStocks1
 
 
-# input: a list of objects containing data associated with the difference from the previous close (in points) for each
+# input: a list of objects containing data associated with the difference from the previous close (by percentage) for each
 # minute of the day
 # output: none
 # Description: using a set of for loops, this function goes through each interval of each day, and assigns each interval
