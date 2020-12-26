@@ -5,64 +5,10 @@ import numpy as np
 from tkinter import ttk
 
 
-# Stock Object, creates an object for each day of the S&P 500 for the past 13 years, and records the prices for each minute, which are then assigned
-# to a time interval based on the time of day the data came from. Also records date and closing price.
-class Stock(object):
-
-
-    def __init__(self, dateParam):
-        self.date = dateParam
-        self.timeInterval0Prices = []
-        self.timeInterval1Prices = []
-        self.timeInterval2Prices = []
-        self.timeInterval3Prices = []
-        self.timeInterval4Prices = []
-        self.ClosingPrice = 0
-
-        # Get and set methods for the attributes of the stock class.
-    def updateClosingPrice(self, closingPrice):
-        self.ClosingPrice = closingPrice
-
-    def addTimeInterval0Price(self, timeInterval0Price):
-        self.timeInterval0Prices.append(timeInterval0Price)
-
-    def addTimeInterval1Price(self, timeInterval1Price):
-        self.timeInterval1Prices.append(timeInterval1Price)
-
-    def addTimeInterval2Price(self, timeInterval2Price):
-        self.timeInterval2Prices.append(timeInterval2Price)
-
-    def addTimeInterval3Price(self, timeInterval3Price):
-        self.timeInterval3Prices.append(timeInterval3Price)
-
-    def addTimeInterval4Price(self, timeInterval4Price):
-        self.timeInterval4Prices.append(timeInterval4Price)
-
-
-    def getDate(self):
-        return self.date
-
-    def getTimeInterval0Prices(self):
-        return self.timeInterval0Prices
-
-    def getTimeInterval1Prices(self):
-        return self.timeInterval1Prices
-
-    def getTimeInterval2Prices(self):
-        return self.timeInterval2Prices
-
-    def getTimeInterval3Prices(self):
-        return self.timeInterval3Prices
-
-    def getTimeInterval4Prices(self):
-        return self.timeInterval4Prices
-
-    def getClosingPrice(self):
-        return self.ClosingPrice
 
     
-    # Similar to the Stock Class, this class records the data in relation to the percentage difference from the previous close. Additionally,
-    # this object will contain information related to the similarity between the most recent data and every day in the S&P 500.
+# This object records the data in relation to the percentage difference from the previous close. Additionally
+# this object will contain information related to the similarity between the most recent data and every day in the S&P 500.
 class StockDifference(object):
 
 
